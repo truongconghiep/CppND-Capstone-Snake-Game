@@ -2,6 +2,18 @@
 #include <cmath>
 #include <iostream>
 
+void Snake::ResetSnake()
+{
+  head_x = grid_width / 2;
+  head_y = grid_height / 2;
+  alive = true;
+  body.clear();
+  speed = 0.1f;
+  growing = false;
+  direction = Direction::kUp;
+  size = 0;
+}
+
 void Snake::Update() {
   SDL_Point prev_cell{
       static_cast<int>(head_x),
@@ -38,9 +50,14 @@ void Snake::UpdateHead() {
       break;
   }
 
+  if ((head_x < 0) || (head_y < 0) || (head_x > grid_width) || (head_y > grid_height))
+  {
+    alive = false;
+  }
+
   // Wrap the Snake around to the beginning if going off of the screen.
-  head_x = fmod(head_x + grid_width, grid_width);
-  head_y = fmod(head_y + grid_height, grid_height);
+  // head_x = fmod(head_x + grid_width, grid_width);
+  // head_y = fmod(head_y + grid_height, grid_height);
 }
 
 void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) {

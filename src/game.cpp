@@ -36,7 +36,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
     // After every second, update the window title.
     if (frame_end - title_timestamp >= 1000) {
-      renderer.UpdateWindowTitle(score, frame_count);
+      renderer.UpdateWindowTitle(lives, score, frame_count);
       frame_count = 0;
       title_timestamp = frame_end;
     }
@@ -66,7 +66,20 @@ void Game::PlaceFood() {
 }
 
 void Game::Update() {
-  if (!snake.alive) return;
+  if (!snake.alive)
+  {
+    if (lives > 0)
+    {
+      lives--;
+      score = 0;
+      snake.ResetSnake();
+      PlaceFood();
+    }
+    else
+    {
+      return;
+    }
+  }
 
   snake.Update();
 
