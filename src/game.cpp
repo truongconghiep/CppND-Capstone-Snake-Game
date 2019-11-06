@@ -77,6 +77,10 @@ void Game::Update() {
       }
       score = 0;
       snake.ResetSnake();
+      SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION,
+                         "",
+                         "You died click ok to continue",
+                         NULL);
       PlaceFood();
     }
     else
@@ -92,7 +96,8 @@ void Game::Update() {
   int new_y = static_cast<int>(snake.head_y);
 
   // Check if there's food over here
-  if (food.x == new_x && food.y == new_y) {
+  if (food.x == new_x && food.y == new_y) 
+  {
     score++;
     PlaceFood();
     // Grow snake and increase speed.
@@ -103,3 +108,8 @@ void Game::Update() {
 
 int Game::GetScore() const { return score; }
 int Game::GetSize() const { return snake.size; }
+
+void Game::SetDifficulty(float Speed)
+{
+  snake.speed = Speed;
+}

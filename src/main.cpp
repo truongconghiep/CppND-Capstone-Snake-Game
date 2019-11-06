@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string>
 #include <algorithm>    // std::find_if
+#include "StartWindow.h"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ bool is_number(const std::string &s)
                                     s.end(), [](char c) { return !std::isdigit(c); }) == s.end();
 }
 
-int main()
+void MainGame()
 {
   constexpr std::size_t kFramesPerSecond{60};
   constexpr std::size_t kMsPerFrame{1000 / kFramesPerSecond};
@@ -29,6 +30,10 @@ int main()
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   Controller controller;
   Game game(kGridWidth, kGridHeight);
+
+  float Difficulty = StartWindow();
+  game.SetDifficulty(Difficulty);
+
 
   /* Read record*/
   std::fstream stream;
@@ -55,10 +60,10 @@ int main()
   std::fstream fs;
   fs.open("Record.txt", std::fstream::in | std::fstream::out | std::fstream::trunc);
   fs << to_string(game.Record);
+}
 
-  // SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR,
-  //                        "Missing file",
-  //                        "File is missing. Please reinstall the program.",
-  //                        NULL);
+int main()
+{
+  MainGame();
   return 0;
 }

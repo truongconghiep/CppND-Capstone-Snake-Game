@@ -15,6 +15,7 @@ class Game {
   int GetScore() const;
   int GetSize() const;
   int Record{0};
+  void SetDifficulty(float Speed);
 
  private:
   Snake snake;
