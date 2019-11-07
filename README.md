@@ -45,3 +45,27 @@ In this project, you can build your own C++ application or extend this Snake gam
 2. Make a build directory in the top level directory: `mkdir build && cd build`
 3. Compile: `cmake .. && make`
 4. Run it: `./SnakeGame`.
+
+## Added features
+
+### General description
+
+When the snake game starts, player will be asked to choose a game difficulty. After that a play window will pop-up with the snake and food. At the beginning the snake has 3 lives. The player must use keyboard to move the snake toward food. If the snake hit the food the player will receive a score, and another food will be created at another place in the playing window. If the snake hit any edge of the playing window or its body it will die and loses a live. If it has no live any more the game will be over.
+
+### Play space is restricted in the game window.
+
+If the snake hit any edge of the game window or its body it will die. After that if the snake still has lives the game will restart but it loses one live and player score will be reset.
+
+### Game difficulty can be chosen by player
+
+The difficulty of the game can be chosen by the player before the game start. At the beginning a small window will pop up with 3 buttons for three different levels. Player can click on a button to choose the difficulty he wants. Then this window will disappear and the main game window will pop-up. The speed of the snake will increase faster as the player chooses more difficult levels.
+
+### Snake has more likes
+
+The snake has 3 additional lives, that allows player continues playing after the snake dies. After every time the snake dies its lives is decreased. The game is only over when the snake has no live anymore. The player can see the number of lives on window title bar.
+
+### Best score is recorded.
+
+The best score is stored in a file after the game finishes. When the game starts the record will be read from the file and when the game finishes, if a new record is established, it will be write in the record file.
+
+
