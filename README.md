@@ -17,21 +17,21 @@ In this project, you can build your own C++ application or extend this Snake gam
   * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
 * SDL2 >= 2.0.8
   * Installation of SDL 2.0.10
-    wget https://www.libsdl.org/release/SDL2-2.0.10.tar.gz
-    tar -xzvf SDL2-2.0.10.tar.gz
-    cd SDL2-2.0.10
-    ./configure
-    make all
-    sudo make install
+    * wget https://www.libsdl.org/release/SDL2-2.0.10.tar.gz
+    * tar -xzvf SDL2-2.0.10.tar.gz
+    * cd SDL2-2.0.10
+    * ./configure
+    * make all
+    * sudo make install
     
 * SDL2_ttf
   * Installation instruction
-    wget  https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.15.tar.gz
-    tar -xzvf SDL2_ttf-2.0.15.tar.gz
-    cd SDL2_ttf-2.0.15
-    ./configure
-    make all
-    sudo make install
+    * wget  https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.15.tar.gz
+    * tar -xzvf SDL2_ttf-2.0.15.tar.gz
+    * cd SDL2_ttf-2.0.15
+    * ./configure
+    * make all
+    * sudo make install
     
   
 * gcc/g++ >= 5.4
