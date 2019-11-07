@@ -54,7 +54,7 @@ When the snake game starts, player will be asked to choose a game difficulty. Af
 
 ### Play space is restricted in the game window.
 
-If the snake hit any edge of the game window or its body it will die. After that if the snake still has lives the game will restart but it loses one live and player score will be reset.
+If the snake hits any edge of the game window or its body it will die. After that if the snake still has lives the game will restart but it loses one live and player score will be reset.
 
 ### Game difficulty can be chosen by player
 
