@@ -27,10 +27,10 @@ void MainGame()
   constexpr std::size_t kGridWidth{32};
   constexpr std::size_t kGridHeight{32};
 
-  Game game(kGridWidth, kGridHeight);
+  Game *game = new Game(kGridWidth, kGridHeight);
 
   float Difficulty = StartWindow();
-  game.SetDifficulty(Difficulty);
+  game->SetDifficulty(Difficulty);
 
   Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
   Controller controller;
@@ -42,18 +42,18 @@ void MainGame()
   stream >> Record;
   if (is_number(Record))
   {
-    game.Record = stoi(Record);
+    game->Record = stoi(Record);
   }
   else
   {
-    game.Record = 0;
+    game->Record = 0;
   }
-  cout << "read record " << game.Record << endl;
+  cout << "read record " << game->Record << endl;
   stream.close();
 
-  game.Run(controller, renderer, kMsPerFrame);
+  game->Run(controller, renderer, kMsPerFrame);
 
-  if (game.GameOver)
+  if (game->GameOver)
   {
     SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION,
                              "",
@@ -61,13 +61,16 @@ void MainGame()
                              NULL);
   }
   std::cout << "Game has terminated successfully!\n";
-  std::cout << "Score: " << game.GetScore() << "\n";
-  std::cout << "Size: " << game.GetSize() << "\n";
+  std::cout << "Score: " << game->GetScore() << "\n";
+  std::cout << "Size: " << game->GetSize() << "\n";
 
   /* Store record */
   std::fstream fs;
   fs.open("Record.txt", std::fstream::in | std::fstream::out | std::fstream::trunc);
-  fs << to_string(game.Record);
+  fs << to_string(game->Record);
+  fs.close();
+
+  delete game;
 }
 
 int main()
