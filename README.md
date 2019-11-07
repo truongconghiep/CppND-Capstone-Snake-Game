@@ -15,9 +15,25 @@ In this project, you can build your own C++ application or extend this Snake gam
   * Linux: make is installed by default on most Linux distros
   * Mac: [install Xcode command line tools to get make](https://developer.apple.com/xcode/features/)
   * Windows: [Click here for installation instructions](http://gnuwin32.sourceforge.net/packages/make.htm)
-* SDL2 >= 2.0
-  * All installation instructions can be found [here](https://wiki.libsdl.org/Installation)
-  * Note that for Linux, an `apt` or `apt-get` installation is preferred to building from source.
+* SDL2 >= 2.0.8
+  * Installation of SDL 2.0.10
+    wget https://www.libsdl.org/release/SDL2-2.0.10.tar.gz
+    tar -xzvf SDL2-2.0.10.tar.gz
+    cd SDL2-2.0.10
+    ./configure
+    make all
+    sudo make install
+    
+* SDL2_ttf
+  * Installation instruction
+    wget  https://www.libsdl.org/projects/SDL_ttf/release/SDL2_ttf-2.0.15.tar.gz
+    tar -xzvf SDL2_ttf-2.0.15.tar.gz
+    cd SDL2_ttf-2.0.15
+    ./configure
+    make all
+    sudo make install
+    
+  
 * gcc/g++ >= 5.4
   * Linux: gcc / g++ is installed by default on most Linux distros
   * Mac: same deal as make - [install Xcode command line tools](https://developer.apple.com/xcode/features/)
