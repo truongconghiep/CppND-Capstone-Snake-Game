@@ -71,6 +71,7 @@ void Game::Update() {
     if (lives > 0)
     {
       lives--;
+
       if(Record < score)
       {
         Record = score;
@@ -104,7 +105,6 @@ void Game::Update() {
     // Grow snake and increase speed.
     snake.GrowBody();
     snake.speed += snake.speedIncrement;
-    std::cout << "speed " << snake.speed << std::endl;
   }
 }
 
