@@ -58,7 +58,7 @@ If the snake hits any edge of the game window or its body it will die. After tha
 
 ### Game difficulty can be chosen by player
 
-The difficulty of the game can be chosen by the player before the game start. At the beginning a small window will pop up with 3 buttons for three different levels. Player can click on a button to choose the difficulty he wants. Then this window will disappear and the main game window will pop-up. The speed of the snake will increase faster as the player chooses more difficult levels.
+The difficulty of the game can be chosen by the player before the game start. At the beginning a small window will pop up with 3 buttons for three different levels. Player can click on a button to choose the difficulty he wants. Then this window will disappear and the main game window will pop-up. The speed of the snake will increase steady as the player chooses more difficult levels.
 
 ### Snake has more likes
 
@@ -104,5 +104,39 @@ This module consists of StartWindow.h and StartWindow.cpp. These files provide f
 ### main
 
 This is the entrypoint for the program. The main function in this file sets variables such as the window height and width and the number of frames per second at which the game will be played. The main also creates Renderer, Controller, and Game objects, and calls the Game::Run method to start the game loop.
+
+## Rubic points explaination
+
+### README
+
+|CRITERIA| EXPLAINATION|
+|--------|-------------|
+|A README with instructions is included with the project|[README](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/edit/master/README.md)|
+|The README indicates which project is chosen.| see *Added features*|
+|The README includes information about each rubric point addressed.| this chapter|
+
+### Compiling and Testing
+
+The submission must compile and run
+<img src="CmakeAndMake.png"/>
+
+### Loops, Functions, I/O
+|CRITERIA| EXPLAINATION|
+|--------|-------------|
+|The project demonstrates an understanding of C++ functions and control structures.|This project is organized into some modules: Controller, game, renderer, snake, StartWindow|
+|The project reads data from a file and process the data, or the program writes data to a file.| [Read file](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/8a5cc98ab6ad3f00c54791547ae55af444744c5c/src/main.cpp#L40) and [write file](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/8a5cc98ab6ad3f00c54791547ae55af444744c5c/src/main.cpp#L70)|
+|The project accepts user input and processes the input.| [Input Handler](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/8a5cc98ab6ad3f00c54791547ae55af444744c5c/src/controller.cpp#L12)|
+
+### Object Oriented Programming
+
+|CRITERIA| EXPLAINATION|
+|--------|-------------|
+|The project uses Object Oriented Programming techniques.| Used class: [snake](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/8a5cc98ab6ad3f00c54791547ae55af444744c5c/src/snake.h#L7), [game](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/8a5cc98ab6ad3f00c54791547ae55af444744c5c/src/game.h#L10), [controller](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/8a5cc98ab6ad3f00c54791547ae55af444744c5c/src/controller.h#L6), etc|
+|Classes use appropriate access specifiers for class members.| all classes use accesspecifiers|
+|Class constructors utilize member initialization lists.| [snake constructor](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/8a5cc98ab6ad3f00c54791547ae55af444744c5c/src/snake.h#L11)|
+|Classes abstract implementation details from their interfaces.|member function names are understandable and meaningful|
+|Classes encapsulate behavior.| data and functions are organized into classes|
+|||
+
 
 
