@@ -154,17 +154,17 @@ float StartWindow()
 
         if (button(renderer, &EasyButton))
         {
-            RetVal = 0.1;
+            RetVal = 0.02;
             break;
         }
         if (button(renderer, &MediumButton))
         {
-            RetVal = 0.2;
+            RetVal = 0.4;
             break;
         }
         if (button(renderer, &HardButton))
         {
-            RetVal = 0.3;
+            RetVal = 0.06;
             break;
         }
 

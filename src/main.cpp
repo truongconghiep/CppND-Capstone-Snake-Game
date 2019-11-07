@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
-#include <algorithm>    // std::find_if
+#include <algorithm> // std::find_if
 #include "StartWindow.h"
 
 using namespace std;
@@ -27,13 +27,13 @@ void MainGame()
   constexpr std::size_t kGridWidth{32};
   constexpr std::size_t kGridHeight{32};
 
-  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
-  Controller controller;
   Game game(kGridWidth, kGridHeight);
 
   float Difficulty = StartWindow();
   game.SetDifficulty(Difficulty);
 
+  Renderer renderer(kScreenWidth, kScreenHeight, kGridWidth, kGridHeight);
+  Controller controller;
 
   /* Read record*/
   std::fstream stream;
@@ -52,6 +52,14 @@ void MainGame()
   stream.close();
 
   game.Run(controller, renderer, kMsPerFrame);
+
+  if (game.GameOver)
+  {
+    SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION,
+                             "",
+                             "Game over - click ok to close",
+                             NULL);
+  }
   std::cout << "Game has terminated successfully!\n";
   std::cout << "Score: " << game.GetScore() << "\n";
   std::cout << "Size: " << game.GetSize() << "\n";

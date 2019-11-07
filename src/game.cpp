@@ -19,7 +19,7 @@ void Game::Run(Controller const &controller, Renderer &renderer,
   int frame_count = 0;
   bool running = true;
 
-  while (running) {
+  while (running && !GameOver) {
     frame_start = SDL_GetTicks();
 
     // Input, Update, Render - the main game loop.
@@ -61,7 +61,7 @@ void Game::PlaceFood() {
       food.x = x;
       food.y = y;
       return;
-    }
+    }   
   }
 }
 
@@ -79,13 +79,13 @@ void Game::Update() {
       snake.ResetSnake();
       SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_INFORMATION,
                          "",
-                         "You died click ok to continue",
+                         "Snake died click ok to continue",
                          NULL);
       PlaceFood();
     }
     else
     {
-      
+      GameOver = true;
       return;
     }
   }
@@ -95,6 +95,7 @@ void Game::Update() {
   int new_x = static_cast<int>(snake.head_x);
   int new_y = static_cast<int>(snake.head_y);
 
+
   // Check if there's food over here
   if (food.x == new_x && food.y == new_y) 
   {
@@ -102,7 +103,8 @@ void Game::Update() {
     PlaceFood();
     // Grow snake and increase speed.
     snake.GrowBody();
-    snake.speed += 0.02;
+    snake.speed += snake.speedIncrement;
+    std::cout << "speed " << snake.speed << std::endl;
   }
 }
 
@@ -111,5 +113,5 @@ int Game::GetSize() const { return snake.size; }
 
 void Game::SetDifficulty(float Speed)
 {
-  snake.speed = Speed;
+  snake.speedIncrement = Speed;
 }
