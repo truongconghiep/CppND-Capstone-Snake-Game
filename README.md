@@ -136,7 +136,13 @@ The submission must compile and run
 |Class constructors utilize member initialization lists.| [snake constructor](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/8a5cc98ab6ad3f00c54791547ae55af444744c5c/src/snake.h#L11)|
 |Classes abstract implementation details from their interfaces.|member function names are understandable and meaningful|
 |Classes encapsulate behavior.| data and functions are organized into classes|
-|||
+|Classes follow an appropriate inheritance hierarchy.| game class is a child class of snake class|
+
+### Memory Management
+|CRITERIA| EXPLAINATION|
+|--------|-------------|
+|The project makes use of references in function declarations.|two functions use pass-by-reference in the project code: [UpdateBody](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/871b7ca9adad051b4fa7059d98f9c44c8a04d987/src/snake.h#L36) and [Game::Run](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/871b7ca9adad051b4fa7059d98f9c44c8a04d987/src/game.h#L13)|
+|The project uses destructors appropriately.| [game object](https://github.com/truongconghiep/CppND-Capstone-Snake-Game/blob/cb2142a443ac4df594e2e73487cf8c3723474c3f/src/main.cpp#L30) is allocated dynamically |
 
 
 
