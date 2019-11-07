@@ -116,7 +116,7 @@ float StartWindow()
     }
 
     SDL_Renderer *renderer = NULL;
-    renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);
+    renderer = SDL_CreateRenderer(window, 2, SDL_RENDERER_ACCELERATED);
     if (!renderer)
     { // renderer creation may fail too
         fprintf(stderr, "create renderer failed: %s\n", SDL_GetError());
